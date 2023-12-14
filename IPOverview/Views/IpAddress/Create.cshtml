@@ -1,0 +1,26 @@
+@model Models.StaticIpAddress
+
+@{
+    var createdDateValue = DateTime.Today.ToString("yyyy-MM-dd");
+}
+
+<h2>Add IP Address Entry</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <label>IP Address</label>
+        <input type="text" class="form-control" name="IpAddress" />
+        <span asp-validation-for="IpAddress" class="text-danger"></span>
+        @Html.ValidationMessageFor(model => model.IpAddress, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label>Associated User</label>
+        <input type="text" class="form-control" name="AssociatedUser" />
+    </div>
+    <div class="form-group">
+        <label>Created Date</label>
+        <input type="date" class="form-control" name="CreatedDate" value="@createdDateValue" />
+    </div>
+    <button type="submit" class="btn btn-success">Add Entry</button>
+}
