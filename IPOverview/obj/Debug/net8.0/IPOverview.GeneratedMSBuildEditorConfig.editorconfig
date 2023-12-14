@@ -18,10 +18,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Github\IPOverview\IPOverview
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Github/IPOverview/IPOverview/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Github/IPOverview/IPOverview/Views/IpAddress/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXBBZGRyZXNzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

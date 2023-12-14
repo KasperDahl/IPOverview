@@ -20,17 +20,11 @@
                 <td>@entry.IpAddress</td>
                 <td>@entry.AssociatedUser</td>
                 <td>@(entry.CreatedDate.HasValue ? entry.CreatedDate.Value.ToString("yyyy-MM-dd") : "")</td>
-                @* <td>@entry.CreatedDate.ToString("yyyy-MM-dd")</td> *@
                 <td>
-                    @* <form method="post" action="@Url.Action("Remove", "IpAddress", new { ipAddress = entry.IpAddress })">
-                <button type="submit" class="btn btn-danger">Remove</button>
-                </form> *@
                     <form method="post" asp-controller="IpAddress" asp-action="Delete"
                         asp-route-ipAddress="@entry.IpAddress">
                         <button type="submit" class="btn btn-danger">Remove</button>
                     </form>
-
-
                 </td>
             </tr>
         }

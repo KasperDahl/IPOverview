@@ -31,7 +31,7 @@ public class IpAddressController : Controller
             }
             else
             {
-                ModelState.AddModelError("", "IP Address already exists.");
+                ModelState.AddModelError("IpAddress", "IP Address already exists.");
             }
         }
 
@@ -43,6 +43,21 @@ public class IpAddressController : Controller
     {
         var entries = ipAddressManager.GetAllEntries();
         return View(entries);
+    }
+
+
+    // Edit an IP address entry - This functionality has been implemented!
+    public IActionResult Edit(string ipAddress)
+    {
+        var entry = ipAddressManager.GetEntryByIpAddress(ipAddress);
+        if (entry != null)
+        {
+            return View("Create", entry);
+        }
+        else
+        {
+            return NotFound();
+        }
     }
 
     // Delete an IP address entry

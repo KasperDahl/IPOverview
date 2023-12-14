@@ -35,26 +35,32 @@ namespace Models
             return ipAddresses ?? Enumerable.Empty<StaticIpAddress>();
         }
 
+        // Get static IP address entry by IP address
+        public StaticIpAddress? GetEntryByIpAddress(string ipAddress)
+        {
+            return ipAddresses.FirstOrDefault(entry => entry.IpAddress == ipAddress);
+        }
+
         // Add initial static IP address entries
         public void AddInitialEntries()
         {
             AddIpAddress(new StaticIpAddress
             {
                 IpAddress = "192.168.1.1",
-                AssociatedUser = "User1",
-                CreatedDate = new DateTime(2023, 1, 1)
+                AssociatedUser = "DanelecTest",
+                CreatedDate = new DateTime(2021, 1, 1)
             });
             AddIpAddress(new StaticIpAddress
             {
                 IpAddress = "192.168.1.2",
-                AssociatedUser = "User2",
-                CreatedDate = new DateTime(2023, 1, 2)
+                AssociatedUser = "R&D IP",
+                CreatedDate = new DateTime(2022, 10, 2)
             });
             AddIpAddress(new StaticIpAddress
             {
                 IpAddress = "192.168.1.3",
-                AssociatedUser = "User3",
-                CreatedDate = new DateTime(2023, 1, 3)
+                AssociatedUser = "MVC App IP",
+                CreatedDate = new DateTime(2023, 3, 3)
             });
         }
     }
